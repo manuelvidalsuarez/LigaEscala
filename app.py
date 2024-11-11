@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 st.set_page_config(layout="wide")
 
 # Cargar los datos desde el archivo Excel
-df = pd.read_excel(fr"C:\Users\vidal\Desktop\Transformed_Plantillas_y_precios.xlsx")
+df = pd.read_excel(fr"Transformed_Plantillas_y_precios.xlsx")
 
 
 # Inicializar las selecciones previas en la sesión de Streamlit si no existen
