@@ -109,6 +109,8 @@ if completo and total_presupuesto >= 0:
     # Gráfico de barras de jugadores más caros a más baratos
     st.subheader("Jugadores más caros a más baratos")
     df_ordenado = df_seleccionados.sort_values(by='Precio', ascending=True)
+    df_ordenado2 = df_seleccionados.sort_values(by='Precio', ascending=False)
+
     fig, ax = plt.subplots()
     ax.barh(df_ordenado['Jugador'], df_ordenado['Precio'], color='blue')
     ax.set_xlabel('Precio (millones)')
@@ -128,8 +130,8 @@ if completo and total_presupuesto >= 0:
     st.subheader("Estadísticas Adicionales")
     
     # Jugador más caro
-    jugador_mas_caro = df_ordenado.iloc[0]['Jugador']
-    precio_mas_caro = df_ordenado.iloc[0]['Precio']
+    jugador_mas_caro = df_ordenado2.iloc[0]['Jugador']
+    precio_mas_caro = df_ordenado2.iloc[0]['Precio']
     st.write(f"Jugador más caro: {jugador_mas_caro} ({precio_mas_caro} millones)")
 
     # Equipo más utilizado
