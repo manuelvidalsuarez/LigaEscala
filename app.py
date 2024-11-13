@@ -69,13 +69,17 @@ for posicion, cantidad in ALINEACIONES[alineacion].items():
     st.subheader(f"{posicion}:")
     distribuir_posiciones(posicion, cantidad)
 
-# Calcular el presupuesto gastado
+jugadores_seleccionados = set()  # Usamos un set para evitar duplicados
 precio_total = 0
-jugadores_seleccionados = []
+
+# Iteramos sobre los jugadores seleccionados
 for key, seleccion in st.session_state.jugadores_seleccionados.items():
     if seleccion:
-        precio_total += df[df['Jugador'].isin(seleccion)]['Precio'].sum()
-        jugadores_seleccionados.extend(seleccion)
+        # Agregamos cada jugador al conjunto de jugadores seleccionados (sin duplicados)
+        jugadores_seleccionados.update(seleccion)
+        precio_total = df[df['Jugador'].isin(jugadores_seleccionados)]['Precio'].sum()
+
+
 
 total_presupuesto = 200 - precio_total
 st.subheader(f"Presupuesto restante: {total_presupuesto:.2f} millones")
