@@ -7,6 +7,7 @@ st.set_page_config(layout="wide")
 
 # Cargar los datos desde el archivo Excel
 df = pd.read_excel(fr"escala25.xlsx")
+df = df.drop_duplicates()
 
 
 # Inicializar las selecciones previas en la sesión de Streamlit si no existen
