@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 st.set_page_config(layout="wide")
 
 # Cargar los datos desde el archivo Excel
-df = pd.read_excel(fr"Transformed_Plantillas_y_precios.xlsx")
+df = pd.read_excel(fr"escala25.xlsx")
 
 
 # Inicializar las selecciones previas en la sesión de Streamlit si no existen
@@ -18,9 +18,13 @@ st.title("App Simulador Plantillas")
 
 # Definir las alineaciones
 ALINEACIONES = {
-    "532": {"PORTERO": 1, "DEFENSA": 5, "MEDIOCENTRO": 3, "DELANTERO": 2},
-    "433": {"PORTERO": 1, "DEFENSA": 4, "MEDIOCENTRO": 3, "DELANTERO": 3},
-    "442": {"PORTERO": 1, "DEFENSA": 4, "MEDIOCENTRO": 4, "DELANTERO": 2}
+    "5-3-2": {"PORTERO": 1, "DEFENSA": 5, "MEDIOCENTRO": 3, "DELANTERO": 2},
+    "5-4-1": {"PORTERO": 1, "DEFENSA": 5, "MEDIOCENTRO": 4, "DELANTERO": 1},
+      "3-5-2": {"PORTERO": 1, "DEFENSA": 3, "MEDIOCENTRO": 5, "DELANTERO": 2},
+      "3-4-3": {"PORTERO": 1, "DEFENSA": 4, "MEDIOCENTRO": 4, "DELANTERO": 2},
+      "4-3-3": {"PORTERO": 1, "DEFENSA": 4, "MEDIOCENTRO": 3, "DELANTERO": 3},
+    "4-4-2": {"PORTERO": 1, "DEFENSA": 4, "MEDIOCENTRO": 4, "DELANTERO": 2}
+    
 }
 
 # Crear un selectbox para seleccionar la alineación
