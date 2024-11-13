@@ -76,7 +76,7 @@ for key, seleccion in st.session_state.jugadores_seleccionados.items():
         precio_total += df[df['Jugador'].isin(seleccion)]['Precio'].sum()
         jugadores_seleccionados.extend(seleccion)
 
-total_presupuesto = 250 - precio_total
+total_presupuesto = 200 - precio_total
 st.subheader(f"Presupuesto restante: {total_presupuesto:.2f} millones")
 
 # Comprobar si se ha excedido el presupuesto
